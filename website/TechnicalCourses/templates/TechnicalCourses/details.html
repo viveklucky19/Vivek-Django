@@ -1,6 +1,13 @@
 {% if course.pk is 1 %}
+<img src="https://c7.uihere.com/files/447/294/563/python-javascript-logo-clojure-python-logo-download.jpg" />
 <h1><a href="https://www.python.org/" />{{course.coursename}}</h1>
 <h2>{{course.insname}}</h2>
+
+<ul>
+    {% for x in AllCourses.set.all %}
+    <li>{{x.ct}}</li>
+     {% endfor %}
+</ul>
 
 {% elif course.pk is 2 %}
 
@@ -12,3 +19,15 @@
 <h2>{{course.insname}}</h2>
 
 {% endif %}
+
+{% if error_message %} <p><strong>{{error_message}}</strong></p>
+{% endif %}
+
+<form action="{% url 'TechnicalCourses:yourchoice1' course.id %}" method="post">
+ {% csrf_token %}
+ {% for choice in course.details_set.all  %}
+ <input type="radio" name="choice" id="choice{{forloop.counter}}" value= "choice.id" />
+ <label for ="choice{{forloop.counter}}" > {{choice.ct}}</label><br>
+ {% endfor %}
+ <input type="submit" value= "Submit">
+ </form>
