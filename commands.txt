@@ -1,0 +1,15 @@
+django-admin startproject website
+
+python3 manage.py runserver
+
+python3 manage.py startapp TechnicalCourses
+
+python3 manage.py migrate
+
+python3 manage.py makemigrations
+
+python3 manage.py sqlmigrate TechnicalCourses 0001
+
+python3 manage.py shell
+
+ python3 manage.py createsuperuser

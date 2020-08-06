@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+<h1>Welcome to Vivek's DJANGO Project!!!</h1>
+<img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli" width="500" height="333">
+<ol>
+
+  {% for x in ac %}
+  <li><a href="/{{x.id}}/">{{x.coursename}}</li>
+  {% endfor %}
+</ol>
+
